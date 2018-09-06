@@ -1,0 +1,65 @@
+{
+	"nexus": {
+		"url": "https://nexus.brains.org/repository",
+		"key": "sample-publisher",
+		"user": "sample-publisher",
+		"api": "https://nexus.brains.org"
+	},
+	"git": {
+		"deploy": "devops"
+	},
+	"jenkins": {
+		"token": "d5dc6142-a74e-4fc0-b380-8f091a218837",
+		"labels": "Windows",
+		"user": "admin"
+	},
+	"nuget": {
+		"key": "43205f8f-1799-3774-81ce-f25e607bbfb6",
+		"source": "https://nexus.brains.org/repository/%s/"
+	},
+	"choco": {
+		"key": "43205f8f-1799-3774-81ce-f25e607bbfb6",
+		"source": "https://nexus.brains.org/repository/chocolatey-devops-hosted/"
+	},
+	"tfs": {
+		"url": "https://tfs.brains.org/tfs/brains_IT/",
+		"poll": "15"
+	},
+	"pipeline": {
+		"repo": "git@gitlab.brains.org:devops/pipeline.git",
+		"branch": "master"
+	},
+	"puppet": {
+		"dir": "C:\\brainsData\\Puppet"
+	},
+  "names": {
+	  "DEV": {
+    	"deploy": "srvcDEVOPSDEPLOYDEV",
+    	"nexus": "srvcDEVOPSNEXUSAPI",
+		"sql": "srvcDEVOPSSQLDEV"
+	  },
+	  "SIT": {
+    	"deploy": "srvcDEVOPSDEPLOYSIT",
+    	"nexus": "srvcDEVOPSNEXUSAPI",
+		"sql": "srvcDEVOPSSQLSIT"
+	  },
+	  "QAE": {
+    	"deploy": "srvcDEVOPSDEPLOYQAE",
+    	"nexus": "srvcDEVOPSNEXUSAPI",
+		"sql": "srvcDEVOPSSQLQAE"
+	  },
+	  "STG": {
+    	"deploy": "srvcDEVOPSDEPLOYSTG",
+    	"nexus": "srvcDEVOPSNEXUSAPI",
+		"sql": "srvcDEVOPSSQLSTG"
+	  },
+	  "PRD": {
+    	"deploy": "srvcDEVOPSDEPLOYPRD",
+    	"nexus": "srvcDEVOPSNEXUSAPI",
+		"sql": "srvcDEVOPSSQLPRD"
+	  }
+  },
+	"deploy": {
+		"branch": "master"
+	}
+}

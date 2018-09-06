@@ -1,0 +1,524 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "nexus",
+    "git",
+    "jenkins",
+    "nuget",
+    "choco",
+    "tfs",
+    "pipeline",
+    "puppet",
+    "names",
+    "deploy"
+  ],
+  "properties": {
+    "nexus": {
+      "$id": "#/properties/nexus",
+      "type": "object",
+      "title": "The Nexus Schema",
+      "required": [
+        "url",
+        "key",
+        "user",
+        "api"
+      ],
+      "properties": {
+        "url": {
+          "$id": "#/properties/nexus/properties/url",
+          "type": "string",
+          "title": "The Url Schema",
+          "default": "",
+          "examples": [
+            "https://nexus.brains.org/repository"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "key": {
+          "$id": "#/properties/nexus/properties/key",
+          "type": "string",
+          "title": "The Key Schema",
+          "default": "",
+          "examples": [
+            "sample-publisher"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "user": {
+          "$id": "#/properties/nexus/properties/user",
+          "type": "string",
+          "title": "The User Schema",
+          "default": "",
+          "examples": [
+            "sample-publisher"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "api": {
+          "$id": "#/properties/nexus/properties/api",
+          "type": "string",
+          "title": "The Api Schema",
+          "default": "",
+          "examples": [
+            "https://nexus.brains.org"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "git": {
+      "$id": "#/properties/git",
+      "type": "object",
+      "title": "The Git Schema",
+      "required": [
+        "deploy"
+      ],
+      "properties": {
+        "deploy": {
+          "$id": "#/properties/git/properties/deploy",
+          "type": "string",
+          "title": "The Deploy Schema",
+          "default": "",
+          "examples": [
+            "devops"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "jenkins": {
+      "$id": "#/properties/jenkins",
+      "type": "object",
+      "title": "The Jenkins Schema",
+      "required": [
+        "token",
+        "labels",
+        "user"
+      ],
+      "properties": {
+        "token": {
+          "$id": "#/properties/jenkins/properties/token",
+          "type": "string",
+          "title": "The Token Schema",
+          "default": "",
+          "examples": [
+            "d5dc6142-a74e-4fc0-b380-8f091a218837"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "labels": {
+          "$id": "#/properties/jenkins/properties/labels",
+          "type": "string",
+          "title": "The Labels Schema",
+          "default": "",
+          "examples": [
+            "Windows"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "user": {
+          "$id": "#/properties/jenkins/properties/user",
+          "type": "string",
+          "title": "The User Schema",
+          "default": "",
+          "examples": [
+            "admin"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "nuget": {
+      "$id": "#/properties/nuget",
+      "type": "object",
+      "title": "The Nuget Schema",
+      "required": [
+        "key",
+        "source"
+      ],
+      "properties": {
+        "key": {
+          "$id": "#/properties/nuget/properties/key",
+          "type": "string",
+          "title": "The Key Schema",
+          "default": "",
+          "examples": [
+            "43205f8f-1799-3774-81ce-f25e607bbfb6"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "source": {
+          "$id": "#/properties/nuget/properties/source",
+          "type": "string",
+          "title": "The Source Schema",
+          "default": "",
+          "examples": [
+            "https://nexus.brains.org/repository/%s/"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "choco": {
+      "$id": "#/properties/choco",
+      "type": "object",
+      "title": "The Choco Schema",
+      "required": [
+        "key",
+        "source"
+      ],
+      "properties": {
+        "key": {
+          "$id": "#/properties/choco/properties/key",
+          "type": "string",
+          "title": "The Key Schema",
+          "default": "",
+          "examples": [
+            "43205f8f-1799-3774-81ce-f25e607bbfb6"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "source": {
+          "$id": "#/properties/choco/properties/source",
+          "type": "string",
+          "title": "The Source Schema",
+          "default": "",
+          "examples": [
+            "https://nexus.brains.org/repository/chocolatey-devops-hosted/"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "tfs": {
+      "$id": "#/properties/tfs",
+      "type": "object",
+      "title": "The Tfs Schema",
+      "required": [
+        "url",
+        "poll"
+      ],
+      "properties": {
+        "url": {
+          "$id": "#/properties/tfs/properties/url",
+          "type": "string",
+          "title": "The Url Schema",
+          "default": "",
+          "examples": [
+            "https://tfs.brains.org/tfs/brains_IT/"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "poll": {
+          "$id": "#/properties/tfs/properties/poll",
+          "type": "string",
+          "title": "The Poll Schema",
+          "default": "",
+          "examples": [
+            "15"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "pipeline": {
+      "$id": "#/properties/pipeline",
+      "type": "object",
+      "title": "The Pipeline Schema",
+      "required": [
+        "repo",
+        "branch"
+      ],
+      "properties": {
+        "repo": {
+          "$id": "#/properties/pipeline/properties/repo",
+          "type": "string",
+          "title": "The Repo Schema",
+          "default": "",
+          "examples": [
+            "git@gitlab.brains.org:devops/pipeline.git"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "branch": {
+          "$id": "#/properties/pipeline/properties/branch",
+          "type": "string",
+          "title": "The Branch Schema",
+          "default": "",
+          "examples": [
+            "master"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "puppet": {
+      "$id": "#/properties/puppet",
+      "type": "object",
+      "title": "The Puppet Schema",
+      "required": [
+        "dir"
+      ],
+      "properties": {
+        "dir": {
+          "$id": "#/properties/puppet/properties/dir",
+          "type": "string",
+          "title": "The Dir Schema",
+          "default": "",
+          "examples": [
+            "C:\\brainsData\\Puppet"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "names": {
+      "$id": "#/properties/names",
+      "type": "object",
+      "title": "The Names Schema",
+      "required": [
+        "DEV",
+        "SIT",
+        "QAE",
+        "STG",
+        "PRD"
+      ],
+      "properties": {
+        "DEV": {
+          "$id": "#/properties/names/properties/DEV",
+          "type": "object",
+          "title": "The Dev Schema",
+          "required": [
+            "deploy",
+            "nexus",
+            "sql"
+          ],
+          "properties": {
+            "deploy": {
+              "$id": "#/properties/names/properties/DEV/properties/deploy",
+              "type": "string",
+              "title": "The Deploy Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSDEPLOYDEV"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "nexus": {
+              "$id": "#/properties/names/properties/DEV/properties/nexus",
+              "type": "string",
+              "title": "The Nexus Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSNEXUSAPI"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "sql": {
+              "$id": "#/properties/names/properties/DEV/properties/sql",
+              "type": "string",
+              "title": "The Sql Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSSQLDEV"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "SIT": {
+          "$id": "#/properties/names/properties/SIT",
+          "type": "object",
+          "title": "The Sit Schema",
+          "required": [
+            "deploy",
+            "nexus",
+            "sql"
+          ],
+          "properties": {
+            "deploy": {
+              "$id": "#/properties/names/properties/SIT/properties/deploy",
+              "type": "string",
+              "title": "The Deploy Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSDEPLOYSIT"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "nexus": {
+              "$id": "#/properties/names/properties/SIT/properties/nexus",
+              "type": "string",
+              "title": "The Nexus Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSNEXUSAPI"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "sql": {
+              "$id": "#/properties/names/properties/SIT/properties/sql",
+              "type": "string",
+              "title": "The Sql Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSSQLSIT"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "QAE": {
+          "$id": "#/properties/names/properties/QAE",
+          "type": "object",
+          "title": "The Qae Schema",
+          "required": [
+            "deploy",
+            "nexus",
+            "sql"
+          ],
+          "properties": {
+            "deploy": {
+              "$id": "#/properties/names/properties/QAE/properties/deploy",
+              "type": "string",
+              "title": "The Deploy Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSDEPLOYQAE"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "nexus": {
+              "$id": "#/properties/names/properties/QAE/properties/nexus",
+              "type": "string",
+              "title": "The Nexus Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSNEXUSAPI"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "sql": {
+              "$id": "#/properties/names/properties/QAE/properties/sql",
+              "type": "string",
+              "title": "The Sql Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSSQLQAE"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "STG": {
+          "$id": "#/properties/names/properties/STG",
+          "type": "object",
+          "title": "The Stg Schema",
+          "required": [
+            "deploy",
+            "nexus",
+            "sql"
+          ],
+          "properties": {
+            "deploy": {
+              "$id": "#/properties/names/properties/STG/properties/deploy",
+              "type": "string",
+              "title": "The Deploy Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSDEPLOYSTG"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "nexus": {
+              "$id": "#/properties/names/properties/STG/properties/nexus",
+              "type": "string",
+              "title": "The Nexus Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSNEXUSAPI"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "sql": {
+              "$id": "#/properties/names/properties/STG/properties/sql",
+              "type": "string",
+              "title": "The Sql Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSSQLSTG"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "PRD": {
+          "$id": "#/properties/names/properties/PRD",
+          "type": "object",
+          "title": "The Prd Schema",
+          "required": [
+            "deploy",
+            "nexus",
+            "sql"
+          ],
+          "properties": {
+            "deploy": {
+              "$id": "#/properties/names/properties/PRD/properties/deploy",
+              "type": "string",
+              "title": "The Deploy Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSDEPLOYPRD"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "nexus": {
+              "$id": "#/properties/names/properties/PRD/properties/nexus",
+              "type": "string",
+              "title": "The Nexus Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSNEXUSAPI"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "sql": {
+              "$id": "#/properties/names/properties/PRD/properties/sql",
+              "type": "string",
+              "title": "The Sql Schema",
+              "default": "",
+              "examples": [
+                "srvcDEVOPSSQLPRD"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    },
+    "deploy": {
+      "$id": "#/properties/deploy",
+      "type": "object",
+      "title": "The Deploy Schema",
+      "required": [
+        "branch"
+      ],
+      "properties": {
+        "branch": {
+          "$id": "#/properties/deploy/properties/branch",
+          "type": "string",
+          "title": "The Branch Schema",
+          "default": "",
+          "examples": [
+            "master"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  }
+}
